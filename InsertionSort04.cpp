@@ -45,7 +45,7 @@ void Read2A(ifstream &input, double *A,int n)
 
 int main()
 {
-	ifstream input("D:\\test.txt");
+	ifstream input("D:\\Temporary work data\\test.txt");
 	//读入文件中一维数组的长度n
 	int n=Length(input);
 

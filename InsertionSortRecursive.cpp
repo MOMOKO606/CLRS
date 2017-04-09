@@ -52,7 +52,7 @@ void InsertionSort_Recursive(T A[],int n)
 
 int main()
 {
-	ifstream input("D:\\test.txt");
+	ifstream input("D:\\Temporary work data\\test.txt");
 	//读文件长度
 	int n = Length(input);
 
