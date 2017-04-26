@@ -1,3 +1,6 @@
+//CLRS P31: Merge sort
+//Using sentinels
+
 #include<iostream>
 #include<fstream>
 #include<string>

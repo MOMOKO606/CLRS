@@ -1,3 +1,6 @@
+//CLRS P18: Insertion sort
+//using cin, functions
+
 #include <iostream>
 
 using namespace std;

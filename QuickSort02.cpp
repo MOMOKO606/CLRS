@@ -1,3 +1,6 @@
+//CLRS P171: Quicksort
+//A[r] as pivot
+
 #include<string>
 #include<iostream>
 #include<fstream>

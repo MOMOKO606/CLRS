@@ -1,3 +1,5 @@
+//CLRS P29,Exercises 2.2-2:Selection Sort
+
 #include<iostream>
 #include<fstream>
 #include<string>

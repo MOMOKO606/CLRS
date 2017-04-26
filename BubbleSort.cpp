@@ -1,3 +1,5 @@
+//CLRS P40,Problems 2-2:Bubble sort
+
 #include<string>
 #include<iostream>
 #include<fstream>

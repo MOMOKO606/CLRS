@@ -1,3 +1,6 @@
+//CLRS P208,Problems 8-7: Insertion sort
+//Using oblivious compare-exchange algorithm
+
 #include<iostream>
 #include<fstream>
 #include<string>

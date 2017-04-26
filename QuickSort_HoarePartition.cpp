@@ -1,3 +1,6 @@
+//CLRS P185,Problems 7-1: Hoare Partition
+//Quicksort using Hoare Partition
+
 #include<iostream>
 #include<string>
 #include<fstream>

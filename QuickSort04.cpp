@@ -1,3 +1,6 @@
+//CLRS P174,Exercises 7.1-4: Quicksort
+//Nonincreasing order
+
 #include<iostream>
 #include<string>
 #include<fstream>

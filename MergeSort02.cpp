@@ -1,3 +1,6 @@
+//CLRS P31,Exercises 2.3-2: Merge sort
+//Without sentinels
+
 #include<iostream>
 #include<fstream>
 #include<string>

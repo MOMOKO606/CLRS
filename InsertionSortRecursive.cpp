@@ -1,3 +1,6 @@
+//CLRS P39,Exercises 2.3-4: Insertion sort
+//Recursive
+
 #include<iostream>
 #include<string>
 #include<fstream>

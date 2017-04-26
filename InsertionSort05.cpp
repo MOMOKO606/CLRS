@@ -1,3 +1,6 @@
+//CLRS P18: Insertion sort
+//using file, functions, template
+
 #include <iostream>
 #include <fstream>
 #include<string>

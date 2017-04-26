@@ -1,3 +1,6 @@
+//CLRS P179: Quicksort
+//Randomized partition
+
 #include<iostream>
 #include<string>
 #include<fstream>

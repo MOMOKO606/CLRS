@@ -1,3 +1,5 @@
+//CLRS P174,Exercises 7.1-2: Quicksort
+
 #include<string>
 #include<fstream>
 #include<iostream>
