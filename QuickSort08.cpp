@@ -1,5 +1,5 @@
-//CLRS P186,Problems 7-2:Quicksort
-//Deal with equal element values.
+//CLRS P188,Problems 7-5:Quicksort
+//Using Median-of-3 Partition
 
 #include<string>
 #include<iostream>
@@ -41,21 +41,30 @@ void Exchange(T &x, T &y)
 }
 
 template<class T>
-int Partition(T *A, int p, int r, int &t)
+int Partition_mof3(T *A, int p, int r)
 {
-	T pivot = A[p];
-	int j = p;
-	for (int i = p + 1; i <= r; i++) {
+	int X[3];
+	for (int i = 0; i != 3; i++)
+		X[i] = rand() % (r - p + 1) + p;
+	if (X[0] >= X[1] && X[0] <= X[2])
+		Exchange(A[X[0]], A[r]);
+	else if (X[1] >= X[0] && X[1] <= X[2])
+		Exchange(A[X[1]], A[r]);
+	else
+		Exchange(A[X[2]], A[r]);
+	return Partition(A, p, r);
+}
+
+template<class T>
+int Partition(T *A, int p, int r)
+{
+	T pivot = A[r];
+	int j = p - 1;
+	for (int i = p; i <= r - 1; i++) {
 		if (A[i] <= pivot)
 			Exchange(A[i], A[++j]);
 	}
-	Exchange(A[j], A[p]);
-	t = j;
-	j = p - 1;
-	for (int i = p; i <= t - 1; i++) {
-		if (A[i] < pivot)
-			Exchange(A[i], A[++j]);
-	}
+	Exchange(A[++j], A[r]);
 	return j;
 }
 
@@ -63,10 +72,9 @@ template<class T>
 void QuickSort(T *A, int p, int r)
 {
 	if (p < r) {
-		int t;
-		int q = Partition(A, p, r, t);
-		QuickSort(A, p, q);
-		QuickSort(A, t + 1, r);
+		int q = Partition_mof3(A, p, r);
+		QuickSort(A, p, q - 1);
+		QuickSort(A, q + 1, r);
 	}
 }
 
@@ -82,6 +90,6 @@ int main()
 
 	for (int i = 0; i != n; i++)
 		cout << A[i] << endl;
-	delete[] A;
+	delete[]A;
 	return 0;
 }
