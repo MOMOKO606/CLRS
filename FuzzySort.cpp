@@ -6,7 +6,9 @@
 #include<string>
 #include<stdlib.h>
 
+
 using namespace std;
+
 
 int RowsofMatrix(ifstream &input)
 {
@@ -24,6 +26,7 @@ int RowsofMatrix(ifstream &input)
 	}
 	return m;
 }
+
 
 int ColumnsofMatrix(ifstream &input)
 {
@@ -44,6 +47,7 @@ int ColumnsofMatrix(ifstream &input)
 	return n;
 }
 
+
 template<class T>
 void Read2A(ifstream &input, T *A, int m, int n)
 {
@@ -57,6 +61,7 @@ void Read2A(ifstream &input, T *A, int m, int n)
 	}
 }
 
+
 template<class T>
 void Exchange(T **A, int i, int j, int col)
 {
@@ -68,25 +73,6 @@ void Exchange(T **A, int i, int j, int col)
 	}
 }
 
-
-template<class T>
-void FuzzySort(T *A, int p, int r)
-{
-	if (p < r) {
-		int t = r;
-		int q = Randomized_PartitionFS(A, p, r, t);
-		FuzzySort(A, p, t - 1);
-		FuzzySort(A, q + 1, r);
-	}
-}
-
-template<class T>
-int Randomized_PartitionFS(T *A, int p, int r,int &t)
-{
-	int i = rand() % (r - p + 1) + p;
-	Exchange(A, i, r, 2);
-	return PartitionFS(A, p, r, t);
-}
 
 template<class T>
 int PartitionFS(T **A, int p, int r,int &t)
@@ -109,6 +95,28 @@ int PartitionFS(T **A, int p, int r,int &t)
 	t = ++j;
 	return q;
 }
+
+
+template<class T>
+int Randomized_PartitionFS(T *A, int p, int r,int &t)
+{
+	int i = rand() % (r - p + 1) + p;
+	Exchange(A, i, r, 2);
+	return PartitionFS(A, p, r, t);
+}
+
+
+template<class T>
+void FuzzySort(T *A, int p, int r)
+{
+	if (p < r) {
+		int t = r;
+		int q = Randomized_PartitionFS(A, p, r, t);
+		FuzzySort(A, p, t - 1);
+		FuzzySort(A, q + 1, r);
+	}
+}
+
 
 int main()
 {
