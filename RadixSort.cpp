@@ -62,7 +62,6 @@ void Change2Radix(T *A, T **Aux, int n, int m)
 			r *= 10;
 		}
 	}
-
 }
 
 template<class T>
